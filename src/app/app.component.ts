@@ -7,11 +7,14 @@ import { Component } from '@angular/core';
   <mat-toolbar color="primary">
     LocalCast Weather
   </mat-toolbar>
+  <mat-card>
    <div>Your city, your forecast, right now!</div>
-   <mat-card>
+   </mat-card>
+   <div class="weather__card">
     <h2>Current Weather</h2>
     <app-current-weather></app-current-weather>
-    </mat-card>
+    </div>
+   <!-- <img mat-card-image src="assets/seattlebg-day.jpg"> -->
   </div>
 `
 })

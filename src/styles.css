@@ -5,6 +5,7 @@
 body {
 
     margin: 0;
+    align-content: center;
 
   }
 
@@ -14,4 +15,35 @@ body {
 
     margin-right: 8px;
 
+  }
+
+  .mat-card {
+    color: blue;
+    margin: 2em;
+    border-color: blue;
+    border-style: solid;
+    border-radius: 25px 25px 25px 25px;
+
+  }
+
+  .weather__card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    box-shadow: 0 0 2rem rgba(0, 0, 255, 0.1);
+    justify-items: center;
+    padding: 2rem;
+    margin: 2rem;
+    width: 25rem;
+    height: 30rem;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 1.75rem;
+    animation: 1.25s ease-in-out 0ms 1 fadein;
+    border: solid blue;
+    justify-content: center;
+    color: blue;
+    background-image: url("assets/seattlebg-day.jpg");
+    margin-left: auto;
+    margin-right: auto;
   }
