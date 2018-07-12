@@ -9,7 +9,8 @@ import { map } from 'rxjs/operators';
 interface ICurrentWeatherData {
   weather: [{
     description: string,
-    icon: string
+    icon: string,
+    id: string
   }],
   main: {
     temp: number
@@ -57,15 +58,15 @@ getCurrentWeather(
         .pipe(map(data =>this.transformToICurrentWeather(data)))
   }
 
-  private transformToICurrentWeather(data: ICurrentWeatherData): 
-  ICurrentWeather {
+  private transformToICurrentWeather(data: ICurrentWeatherData): ICurrentWeather {
     return {
       city: data.name,
       country: data.sys.country,
       date: new Date(),
       image: `http://openweathermap.org/img/w/${data.weather[0].icon}.png`,
       temperature: this.convertKelvinToFahrenheit(data.main.temp),
-      description: data.weather[0].description
+      description: data.weather[0].description,
+      weatherId: data.weather[0].id
     }
   }
 

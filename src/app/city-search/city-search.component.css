@@ -1,0 +1,11 @@
+.mat-hint {
+    color: blue
+}
+
+::ng-deep .mat-input-wrapper{
+    color: blue
+  }
+
+  .div {
+      color: blue
+  }

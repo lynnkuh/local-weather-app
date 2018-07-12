@@ -1,10 +1,14 @@
 
-<div>
+<div *ngIf="current">
   <div>
     <span>{{current.city}}, {{current.country}}</span><br/>
-    <span> {{current.date | date:'fullDate'}}</span>
+    <span> {{current.date | date:'fullDate'}}</span><br/>
+    <span> {{current.weatherId}}</span><br/>
   </div>
-  <div>
+  <div [ngSwitch]="current.weatherId"> 
+   <img *ngSwitchCase="800" [src]="src/assets/if_sun_simple_cloudy_367525" /> 
+  </div> 
+   <div>
     <img [src]='current.image'><br/>
     <span>{{current.temperature | number:'1.0-0'}}℉</span>
   </div>

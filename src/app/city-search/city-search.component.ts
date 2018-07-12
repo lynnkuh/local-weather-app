@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { getMatFormFieldMissingControlError } from '@angular/material';
 import { FormControl, Validators } from '@angular/forms';
-import { WeatherserviceService } from '../weatherservice/weatherservice.service';
 import { debounceTime } from 'rxjs/operators';
 
 @Component({
@@ -18,11 +17,16 @@ export class CitySearchComponent implements OnInit {
     this.search.valueChanges
     .pipe(debounceTime(1000))
     .subscribe(
-      (searchValue: string)  => {
+      (searchValue: string) => {
         if (!this.search.invalid) {
           this.searchEvent.emit(searchValue)
+        }
       }
     )
   }
+
+  getErrorMessage() {
+    return this.search.hasError('minLength') ? 'Type more than one character to search' : '';
+ }
 
 }
