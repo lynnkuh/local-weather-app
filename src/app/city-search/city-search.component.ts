@@ -8,7 +8,9 @@ import { debounceTime } from 'rxjs/operators';
   templateUrl: './city-search.component.html',
   styleUrls: ['./city-search.component.css']
 })
+
 export class CitySearchComponent implements OnInit {
+
   search = new FormControl('', [Validators.minLength(3)])
 
   @Output() searchEvent = new EventEmitter<string>()
@@ -28,5 +30,7 @@ export class CitySearchComponent implements OnInit {
   getErrorMessage() {
     return this.search.hasError('minLength') ? 'Type more than one character to search' : '';
  }
+
+
 
 }

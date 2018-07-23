@@ -32,6 +32,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule
 
   ],
+
+  exports: [
+    BrowserModule,
+    MatButtonModule, 
+    MatToolbarModule, 
+    MatIconModule,
+    MatCardModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    BrowserAnimationsModule
+  ],
+
   providers: [WeatherserviceService],
   bootstrap: [AppComponent]
 })
